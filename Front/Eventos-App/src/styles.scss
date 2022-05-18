@@ -2,3 +2,306 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
 @import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
 @import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+  /*
+    --primary-font: #1E90FF;
+  */
+  $--primary-bg: #ffffff;
+  $--primary-font: #145a9e;
+  $--primary-link: #0c58a2;
+  $--secondary-bg: #e4ecec;
+  $--secondary-font: #9b6969;
+  $--tertiary-bg: #f2f0df;
+  $--tertiary-font: #3a6d8a;
+  $--header-bg: #ebeae1;
+  $--footer-bg: #595850;
+  $--footer-text: #eee;
+  $--table-text: #666;
+  $--font-size: 12px;
+  $--border: 1px solid #2e1313;
+  $--separator: 1.5em;
+  $--main-font: Tahoma, Geneva, sans-serif;
+  $--bgcolor-meu: #d8ffdd;
+  $--red: #ff0000;
+  $--copyright: rgb(215, 9, 178);
+  $--error-font: orange;
+  // $--copyright: #3a6d8a;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $--primary-bg;
+  font-family: $--main-font;
+  color: $--primary-font;
+  font-size: $--font-size;
+}
+
+button {
+  margin-top: 2px;
+}
+
+table {
+  color: $--table-text !important;
+}
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    min-width: 100%;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+th {
+  color: $--secondary-font !important;
+}
+
+.titulo {
+  color: #3a6d8a !important;
+  background-color: #e4ecec;
+}
+
+.copyright {
+  color: $--copyright;
+  font-weight: 500;
+
+}
+
+.page-name {
+  margin: 0.5em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #f3f3f3;
+  padding-bottom: 1em;
+  text-align: center;
+  font-size: 2em;
+  cursor: default;
+}
+
+.container {
+  background-color: $--primary-bg;
+}
+
+.meu {
+  background-color: $--bgcolor-meu;
+}
+
+.main-contents {
+  min-height: calc(100vh - 10.5em);
+  margin: auto;
+}
+
+.text-disabled {
+  color: #999;
+}
+
+td {
+  cursor: default;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.danger {
+  box-shadow: 0 0 15px $--red;
+  border-radius: 0.5em;
+}
+
+.hr {
+  border-top: $--border;
+}
+
+.separator {
+  // margin: $--separator 0;
+  border: 0px solid;
+}
+
+.righty {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  background-color: $--tertiary-bg;
+  min-width: 11em;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  color: $--primary-font;
+}
+
+.dropdown-menu i {
+  width: 1em;
+}
+
+.has-more {
+  font-size: 1.5em;
+  text-align: center;
+  cursor: default;
+}
+
+.tiny {
+  font-size: 0.5em;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.blur {
+  filter: blur(1px);
+}
+
+.form-control {
+  font-size: 1em !important;
+}
+
+select {
+  width: 100% !important;
+}
+
+.op-label {
+  white-space: nowrap;
+  text-align: center;
+  color: $--primary-link;
+}
+
+.op-label span,
+.op-label i {
+  display: block;
+}
+
+.op-label:hover,
+.dropdown-menu li:hover {
+  filter: saturate(0);
+  cursor: pointer;
+}
+
+.op-left,
+.op-right {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.modal-dialog {
+  max-width: 60vw;
+}
+
+.modal-dialog table {
+  width: 100%;
+}
+
+.pretty-row div {
+  margin-bottom: 1em;
+}
+
+.row-separator {
+  margin: 1em;
+
+}
+
+.pretty-row {
+  vertical-align: middle;
+}
+
+.modal-body {
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.modal-content {
+  max-height: 93vh;
+}
+
+.form-control:disabled {
+  color: #999;
+}
+
+.clickable,
+.clickable td {
+  color: $--primary-link;
+  cursor: pointer;
+}
+
+input[readonly] {
+  color: #999;
+}
+
+.operations-box {
+  margin: 1em;
+}
+
+.maintenance-color {
+  color: $--red;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.results-count {
+  font-size: 0.8em;
+  float: right;
+  vertical-align: bottom;
+}
+
+.suggestion-title {
+  font-size: 0.7em;
+  color: green;
+}
+
+.suggestion-value,
+.suggestion-set {
+  display: inline-block;
+  font-size: 0.7em;
+  text-align: right;
+}
+
+.suggestion-value {
+  width: calc(100% - 10em);
+}
+
+.suggestion-set {
+  width: 9em;
+}
+
+.suggestion-button {
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 0.25em;
+  padding: 0.3em 0.5em;
+  margin-left: 0.5em;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+.has-suggestion {
+  background-color: $--secondary-bg;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.error {
+  color: $--error-font;
+}
+
+.botaoImagem {
+  color: $--secondary-font;
+  font-weight: bold;
+  border-color: $--secondary-font;
+}

@@ -1,9 +1,88 @@
-<h1>Eventos de components</h1>
+<h2>Eventos</h2>
+<hr />
 
-
-<div *ngFor="let evento of eventos">
-  <p><b>Tema:</b> {{evento.tema}}</p>
-  <p><b>Local:</b> {{evento.local}}</p>
-  <hr>
+<div>
+  <div class="form-inline">
+    <label class="mr-2">Filtro</label>
+    <input
+      type="text"
+      class="form-control mr-2"
+      placeholder="Buscar"
+      [(ngModel)]="filtroLista"
+    />
+  </div>
 </div>
+<hr />
 
+<!-- <hr>
+<div class="row">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+  </div>
+</div>
+<hr> -->
+
+<!-- <br><hr>
+<input type="text" placeholder="Teste Input" class="meu" disabled>
+<hr><br> -->
+
+<table class="table table-striped">
+  <thead class="titulo">
+    <tr>
+      <th>#</th>
+      <th>
+        <button
+          class="btn btn-outline-light btn-sm botaoImagem"
+          (click)="alterarImagem()"
+        >
+          {{ exibirImagem ? "Ocultar" : "Exibir" }}
+        </button>
+      </th>
+      <th>Tema</th>
+      <th>Local</th>
+      <th>Data</th>
+      <th>Qtd Pessoas</th>
+      <th>Lote</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="eventos && eventos.length">
+    <tr *ngFor="let evento of eventosFiltrados">
+      <td class="row-separator">{{ evento.eventoId }}</td>
+      <td class="row-separator" style="width: 150px">
+        <img
+          [collapse]="!exibirImagem"
+          [isAnimated]="true"
+          src="/assets/{{ evento.imagemURL }}"
+          alt="{{ evento.imagemURL }}"
+          [style.width.px]="widthImg"
+          [style.margin.px]="marginImg"
+        />
+      </td>
+      <td class="row-separator">{{ evento.tema }}</td>
+      <td class="row-separator">{{ evento.local }}</td>
+      <td class="row-separator">{{ evento.dataEvento }}</td>
+      <td class="row-separator">{{ evento.qtdPessoas }}</td>
+      <td class="row-separator">{{ evento.lote }}</td>
+      <td class="row-separator" style="width: 170px">
+        <button class="btn btn-primary btn-sm mr-2">Editar</button>
+        <button class="btn btn-danger btn-sm mr-2">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr *ngIf="!eventos.length">
+      <td colspan="8"><h5 class="error">Nenhum evento encontrado!</h5></td>
+    </tr>
+    <tr>
+      <td colspan="8">
+        <span class="copyright">© 2022 LiSi Sistemas Digitais</span>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<!-- {{eventos | json}} -->
